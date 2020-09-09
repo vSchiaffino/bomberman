@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>108</x>
+      <y>81</y>
+      <w>207</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Input_controller
+--
+input : dict 
+--
+pj_mover_arriba() : None
+pj_mover_derecha() : None
+pj_mover_abajo() : None
+pj_mover_izquierda() : None
+pj_poner_bomba() : None
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>369</x>
+      <y>81</y>
+      <w>207</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+score : int
+tiempo : int
+mapa : Mapa
+ic : Input_controller
+personaje : Personaje
+lista_enemigos : list[5..*]
+--
++pj_morir(pj : Personaje)
++pj_salir(pj : Personaje)
+
+
++loop()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>153</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

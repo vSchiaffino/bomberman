@@ -1,0 +1,59 @@
+@startuml
+
+start
+
+:Pantalla de inicio;
+fork
+:Salir;
+end 
+fork again
+:Configurar;
+:Pantalla de configuracion;
+:Salir;
+fork again
+:Jugar;
+end fork
+:Iniciar juego;
+while (Juego terminado) is (false)
+fork
+:Movimiento;
+:Mover;
+fork again
+:Plantar_bomba;
+fork again
+:Recoger power up;
+:Mejorar personaje;
+fork again
+:Personaje herido;
+:Perder vida;
+if (vidas == 0) then (true)
+:juego terminado = true;
+else (false)
+:vidas -= 1;
+endif
+fork again
+
+:Bomba explotar;
+:Explosion;
+fork again
+:Enemigo herido;
+:Morir;
+fork again
+:Bloque explotado;
+if (destruible) then (true)
+:Destruirse;
+if (power_up) then (true)
+:Drop;
+endif
+endif
+fork again
+:Tiempo acabado;
+:Liberar coin enemys;
+fork again
+:Jugador salio;
+:juego terminado = true;
+end fork
+endwhile (true)
+:Pantalla de inicio;
+
+@enduml
